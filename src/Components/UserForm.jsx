@@ -11,10 +11,7 @@ const UserForm = ({ addUser, updateUser, editingUser, cancelEditing }) => {
     if (editingUser) {
       setFormData(editingUser);
     } else {
-      setFormData({
-        name: '',
-        email: '',
-        role: 'viewer'
+      setFormData({name: '',email: '', role: 'viewer'
       });
     }
   }, [editingUser]);
@@ -36,10 +33,7 @@ const UserForm = ({ addUser, updateUser, editingUser, cancelEditing }) => {
       addUser(formData);
     }
     
-    setFormData({
-      name: '',
-      email: '',
-      role: 'viewer'
+    setFormData({ name: '', email: '',role: 'viewer'
     });
   };
   
@@ -49,30 +43,18 @@ const UserForm = ({ addUser, updateUser, editingUser, cancelEditing }) => {
       <form onSubmit={handleSubmit}>
         <div>
           <label>Nombre:</label>
-          <input type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-          />
+          <input type="text" name="name" value={formData.name} onChange={handleChange} />
         </div>
         
         <div>
           <label>Correo:</label>
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
+          <input type="email" name="email" value={formData.email} onChange={handleChange}
           />
         </div>
         
         <div>
           <label>Rol:</label>
-          <select
-            name="role"
-            value={formData.role}
-            onChange={handleChange}
-          >
+          <select name="role" value={formData.role} onChange={handleChange}>
             <option value="admin">Administrador</option>
             <option value="editor">Editor</option>
             <option value="viewer">Visualizador</option>
